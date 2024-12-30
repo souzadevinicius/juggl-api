@@ -117,7 +117,7 @@ const nodeFromFile = async function (file, plugin, settings, id) {
         }
         catch { }
     }
-    if (settings.readContent && file.extension == 'md') {
+    if (settings?.readContent && file.extension == 'md') {
         data['content'] = await plugin.app.vault.cachedRead(file);
     }
     const frontmatter = cache?.frontmatter;
