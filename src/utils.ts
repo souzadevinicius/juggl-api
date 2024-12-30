@@ -135,7 +135,7 @@ export const nodeFromFile = async function(file: TFile, plugin: IJugglPlugin, se
       data['resource_url'] = `http://localhost:${plugin.settings.imgServerPort}/${encodeURI(file.path)}`;
     } catch {}
   }
-  if (settings.readContent && file.extension == 'md') {
+  if (settings?.readContent && file.extension == 'md') {
     data['content'] = await plugin.app.vault.cachedRead(file);
   }
   const frontmatter = cache?.frontmatter;
